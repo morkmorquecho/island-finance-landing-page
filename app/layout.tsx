@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'Island Finance — Tu patrimonio en calma',
   description: 'Visualiza tus cuentas como islas y tus propósitos financieros como archipiélagos.',
   generator: 'v0.app',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
 }
 
 export const viewport: Viewport = {

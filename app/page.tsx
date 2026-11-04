@@ -6,19 +6,22 @@ import { ScrollReveal } from '../components/scroll-reveal'
 import { PlatformGrid } from '../components/platform-grid'
 import { Button } from '../components/button'
 
-const appScreenshot =
-  'https://v0chat-agent-data-prod.s3.us-east-1.amazonaws.com/agent-browser/tho9pSUaE26/bdf9e458bd73af22af43c20153b2775bb460be231b4ceb7cd1da4de9e90ec1c5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIA52KF4VHQAT4WPADJ%2F20261028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261028T233653Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEEgaCXVzLWVhc3QtMSJIMEYCIQC7E8kadQuZVNV3%2BoOS3gSmu%2BBzVtjv0GsXkE1snmA1ywIhAMz4aXJ3pMxlrfAn%2FzO8Tu3gCJiz3g2kfBciUvGSgjsBKtoDCBEQARoMOTQ5ODcxMjI1MzEyIgxj3vHz5ckkc4EWqwoqtwMXJgnD3HEkiyDgnjtsux5fk0%2B4npqO4d3z%2B4YVnx1E1uSauoMqcdfXTOwGozjH%2BTyKcoo0eCrhryTyYLFIDjEyaFelYAufQN%2FmxJQJMI40Qmbql77PB5u9FwfK8ImQv4it3ZfWo2m1qVAQbpHaPevHQNaX0oberEStoqvstdBehqX9F92draM4zGw5cctWm%2FlbHDt0hLs%2BaaJ1stng0Kf%2BSHzbUfcu%2F6xkP0Hyhp%2F1VDK%2BmHud17pkJ0WBwI2wHKfqS9w6edhvnT4LygKF7k1QPIY%2FR12otS4Uk23lTk8geFvC4%2B6szWE%2Fqw%2FnHexc5hXJ9IUAoGbMBi4MWaHw%2BKItFvUWlnqiN9jawfSutaVl8aBqQtV0nE98nB%2BPeVEwfsQWAb6lEdoQuKMEpWr3Siw3%2FBJzBIyEqZXadpYv%2BsQB%2B8OSjzkYsqv2gUKE6SqAdax4j7%2Bnp9MzaIGkQxkO2z%2FOGGUrNOB6hg8LSq7rTLPLM1pdf5XXP5d2cfJ26FFMZa7gpzhjYsPo623D20gyDUJE4tQIxddAGZWDvBsc8Allu937lvvUwoaNpqsto63aLBiZbyjrhWnPMJOLitcGOpEBw%2F2ghvCq6%2BtkjoSNnEoeQEu1VCMHeSHhAGOMOUCQTe%2FaDX56SrSV9PUWtr6J4S2QmSOv2OJ4XW%2B9%2Fj3rCbV%2FbVhnfKiMc%2FtzSRnPHH3D6pehoRjj33fjg7eQTH201HRjxM8pCC9xidakAsNjJ2BMZ2Bg%2BxxacMCZZw3i0fbp3rIa%2Fx20gyUqkWqTbVD8bZ%2BWZ5g%3D%3D&X-Amz-Signature=217990a429cdcf06f6c5cd92743f82f220dd77ce73ef2ce02cf025108&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject'
+const appScreenshots = {
+  login: '/ss1.png',
+  islands: '/ss2.png',
+  ledger: '/ss3.png',
+}
 const wilsonImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wilson-IjWPrq9o8zqCMmnITcITmFBiO4uQom.jpeg'
 
 const platforms = [
-  { name: 'Nu', initial: 'N', brand: 'nu', description: 'Cuenta digital', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nu-849FlEBDhfkwCn6vZcLUGniaSeCOww.png' },
+  { name: 'Nu', initial: 'N', brand: 'nu', description: 'Cuenta digital', logo: '/nu.png' },
   { name: 'Mercado Pago', initial: 'M', brand: 'mercado-pago', description: 'Billetera digital', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mercado%20pago-vLEtv5qDppQ5xmFUG4enQnMRa7lkpA.png' },
-  { name: 'Revolut', initial: 'R', brand: 'revolut', description: 'Cuenta global', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/revoult-bDVJUBtKdVoYbCHbE6szsMOHu7C997.jpeg' },
-  { name: 'CETES', initial: 'C', brand: 'cetes', description: 'Ahorro e inversión', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cetes-d3KdoO7iCQcsKaHZ13P0OTaTLq1Kz1.png', darkText: true },
-  { name: 'Openbank', initial: 'O', brand: 'openbank', description: 'Banca digital', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/OpenBank-Pt5MGzrVgNci4ROT8wLClQ50JfbQww.png' },
-  { name: 'DiDi Finanzas', initial: 'D', brand: 'didi', description: 'Crédito y finanzas', logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/didi-nGWeyCDcSL1d2E0plwBrPVh2kHNIQV.png' },
-  { name: 'Acciones', initial: 'A', brand: 'acciones', description: 'Inversión', darkText: false },
-  { name: 'Criptomonedas', initial: 'C', brand: 'cripto', description: 'Activos digitales', darkText: true },
+  { name: 'Revolut', initial: 'R', brand: 'revolut', description: 'Cuenta global', logo: '/revoult.png' },
+  { name: 'CETES', initial: 'C', brand: 'cetes', description: 'Ahorro e inversión', logo: '/cetes.jpeg', darkText: true },
+  { name: 'Openbank', initial: 'O', brand: 'openbank', description: 'Banca digital', logo: '/openbank.jpeg' },
+  { name: 'DiDi Finanzas', initial: 'D', brand: 'didi', description: 'Crédito y finanzas', logo: '/didi.jpg' },
+  { name: 'Acciones', initial: 'A', brand: 'acciones', description: 'Inversión', logo: '/gbm.png', darkText: false },
+  { name: 'Criptomonedas', initial: 'C', brand: 'cripto', description: 'Activos digitales', logo: '/crypto.png', darkText: true },
 ]
 
 export default function Page() {
@@ -43,8 +46,8 @@ export default function Page() {
             </div>
             <div className="screenshot-wrap">
               <Image
-                src={appScreenshot}
-                alt="Panel de Island Finance con cuentas y propósitos financieros"
+                src={appScreenshots.login}
+                alt="Pantalla de inicio de sesión de Island Finance"
                 width={900}
                 height={600}
                 priority
@@ -85,7 +88,7 @@ export default function Page() {
 
         <div className="islands-screenshot">
           <Image
-            src={appScreenshot}
+            src={appScreenshots.islands}
             alt="Captura de Island Finance mostrando las cuentas como islas y los propósitos como archipiélagos"
             width={1200}
             height={800}
@@ -118,7 +121,7 @@ export default function Page() {
           </div>
           <div className="screenshot-wrap">
             <Image
-              src={appScreenshot}
+              src={appScreenshots.ledger}
               alt="Bitácora de gastos de Island Finance con gráficas y categorías"
               width={900}
               height={600}
