@@ -1,0 +1,34 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  color: var(--label);
+  cursor: pointer;
+  font-family: var(--font-plex), 'IBM Plex Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.ui-button:hover { transform: none; }
+.ui-button:active { transform: scale(0.98); }
+.ui-button:focus-visible { outline: 2px solid var(--tag-teal); outline-offset: 3px; }
+.ui-button > span { display: inline-block; transition: none; }
+.ui-button::after { display: none; }
+
+.closing-cta { margin-top: 20px; }
+.wilson-cta { margin-top: 15px; }
+.ui-button-primary { background: var(--ocean-deep); color: var(--label); }
+.ui-button-primary:hover { background: var(--foreground); color: var(--label); }
+.ui-button-onDark { background: var(--label); color: var(--label-ink); }
+.ui-button-onDark:hover { background: var(--label); color: var(--label-ink); }
+.ui-button-secondary { border-color: color-mix(in srgb, var(--foreground) 30%, transparent); background: transparent; color: var(--foreground); }
+.ui-button-secondary:hover { border-color: var(--foreground); background: color-mix(in srgb, var(--foreground) 5%, transparent); color: var(--foreground); }
+
+.ui-button.copy-button { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
